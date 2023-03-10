@@ -61,9 +61,30 @@
                         Dolores magni tempora quod perferendis, inventore ea consequatur quo eligendi saepe asperiores.
                     </p>
                     <div class="tab-titles">
-                        <p class="tablinks active-link" id ="btn1" onclick="opentab('skills')">Skills</p>
-                        <p class="tablinks" id ="btn2" onclick="opentab('experience')">Experience</p>
-                        <p class="tablinks" id ="btn3" onclick="opentab('education')">Education</p>
+                            <p
+                                class="tablinks active-link"
+                                id="btn1"
+                                onclick="opentab(this.id)"
+                                data-expand="skills"
+                            >
+                                Skills
+                            </p>
+                            <p
+                                class="tablinks"
+                                id="btn2"
+                                onclick="opentab(this.id)"
+                                data-expand="experience"
+                            >
+                                Experience
+                            </p>
+                            <p
+                                class="tablinks"
+                                id="btn3"
+                                onclick="opentab(this.id)"
+                                data-expand="education"
+                            >
+                                Education
+                            </p>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
@@ -72,14 +93,14 @@
                             <li><span>REACT.JS</span><br>frameworks </li>
                         </ul>
                     </div>
-                    <div class="tab-contents" id="Education">
+                    <div class="tab-contents" id="education">
                         <ul>
                             <li><span>B.tech in Computer Technology</span><br>Yeshwantrao Chavan College Of Engineering</li>
                             <li><span>Primary Education</span><br>Montfort Senior Secondary School </li>
                             <li><span>Secondary Education</span><br> MKH Sanchetti Public School and JR. College </li>
                         </ul>
                     </div>
-                    <div class="tab-contents" id="Experience">
+                    <div class="tab-contents" id="experience">
                         <ul>
                             <li><span>Project-1</span><br>Designed a food delievery website </li>
                             <li><span>Project-2</span><br>desighed a gym membership website </li>
