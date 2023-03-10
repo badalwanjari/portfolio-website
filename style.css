@@ -4,6 +4,11 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
 body {
     background: black;
@@ -13,6 +18,7 @@ body {
 #header {
     width: 100%;
     height: 100vh;
+    margin-inline: auto;
     /* background-image: url('images/background.png'); */
     background-color: black;
     background-size: cover;
@@ -20,23 +26,22 @@ body {
 }
 
 .container {
-    padding: 10px 10%;
+    box-sizing: border-box;
+    margin: 10px 10%;
+    max-width: 100%;
+    
 }
 
 nav {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-    position: relative;
-    left: 290px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     width: 360px;
-    position: relative;
-    left: -660px;
-    top: -30px;
+    scale: 1.35;
 }
 
 nav ul li {
@@ -46,16 +51,17 @@ nav ul li {
 }
 
 nav ul li a {
-
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
     position: relative;
 }
 
 nav ul li a::after {
-    content: '';
+    content: "";
     width: 0;
     height: 3px;
     background: red;
@@ -73,7 +79,6 @@ nav ul li a:hover::after {
     margin-top: 20%;
     font-size: 30px;
     margin-left: -100px;
-
 }
 
 .header-text h1 {
@@ -84,7 +89,6 @@ nav ul li a:hover::after {
 .header-text h1 span {
     color: red;
 }
-
 
 /* about section */
 
@@ -101,11 +105,19 @@ nav ul li a:hover::after {
 
 .about-col-1 {
     flex-basis: 35%;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
 .about-col-1 img {
     width: 100%;
-    border-radius: 15px;
+    transform: scale(1);
+    transition: all 2s;
+}
+
+.about-col-1 img:hover{
+    transform: scale(1.1);
+    transition: all 4s;
 }
 
 .about-col-2 {
@@ -132,7 +144,7 @@ nav ul li a:hover::after {
 }
 
 .tablinks::after {
-    content: '';
+    content: "";
     width: 0;
     height: 3px;
     background: rgb(243, 47, 47);
@@ -163,8 +175,6 @@ nav ul li a:hover::after {
 .tab-contents.active-tab {
     display: block;
 }
-
-
 
 /* ---------------------------SERVICES----------------------------- */
 
@@ -272,55 +282,50 @@ nav ul li a:hover::after {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-
-
 }
 
 .work:hover img {
     transform: scale(1.1);
-
 }
 
 .work:hover .layer {
     height: 100%;
 }
-.btn{
+.btn {
     display: block;
     margin: 50px auto;
     width: fit-content;
     border: 1px solid #ff004f;
-    padding :14px 50px;
+    padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
     color: white;
     transition: background 0.5s, transform 0.5s;
-
 }
-.btn:hover{
+.btn:hover {
     background: #ff004f;
     transform: translateY(-10px);
 }
 
-
 /* ---------------------------------------------------CONTACT-------------------------------------------- */
-.contact-left{
-flex-basis: 35%;
+.contact-left {
+    flex-basis: 35%;
 }
-.contact-right{
+.contact-right {
     flex-basis: 60%;
 }
-.contact-left p{
+.contact-left p {
     margin-top: 30px;
 }
-.contact-left p i{
-    color:#ff004f;
+.contact-left p i {
+    color: #ff004f;
     margin-right: 15px;
     font-size: 25px;
 }
-.social-icons{
+.social-icons {
     margin-top: 30px;
 }
-.social-icons a{
+.social-icons a {
     text-decoration: none;
     font-size: 30px;
     margin-right: 15px;
@@ -328,19 +333,19 @@ flex-basis: 35%;
     display: inline-block;
     transition: transform 0.5s;
 }
-.social-icons a:hover{
+.social-icons a:hover {
     color: #ff004f;
     transform: translateY(-5px);
 }
-.btn.btn2{
+.btn.btn2 {
     display: inline-block;
     background: #ff004f;
-
 }
-.contact-right form{
+.contact-right form {
     width: 100%;
 }
-form input, form textarea{
+form input,
+form textarea {
     width: 100%;
     border: 0;
     outline: none;
@@ -351,20 +356,60 @@ form input, form textarea{
     font-size: 18px;
     border-radius: 6px;
 }
-form btn2{
+form btn2 {
     padding: 14px 60px;
     font-size: 18px;
     margin-top: 10px;
 }
-.copyright{
+.copyright {
     text-align: center;
-   
     padding: 25px 0;
     font-weight: 300;
     margin-top: 20px;
     transition: background 0.5s;
     margin: 0 -160px;
 }
-.copyright:hover{
+.copyright:hover {
     background: grey;
+}
+
+@media (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 1rem 1rem;
+        margin-inline: auto;
+    }
+    nav {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .header-text {
+        margin-left: 0.5rem;
+    }
+    .copyright {
+        margin: 0 20px;
+    }
+    .about-col-2 > p {
+        width: calc(100%-100px);
+        overflow-wrap: normal;
+    }
+    .about-col-1{
+        margin-top: -100px;
+        margin-bottom: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0.5rem;
+    }
+    .about-col-1>img{
+        max-width: 300px;
+        height: auto;
+    }
+    .row{
+        flex-direction: column;
+        padding: 1rem 10px;
+    } 
 }
