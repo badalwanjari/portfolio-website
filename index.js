@@ -1,13 +1,7 @@
-var tablinks = document.getElementsByClassName("tablinks");
-var tabcontents = document.getElementsByClassName("tab-contents");
-
- function opentab(tabname){
-    for(tablink of tablinks){
-        tablink.classlist.remove("active-link");
-    }
-    for(tabcontent of tabcontents){
-        tabcontents.classlist.remove("active-link");
-    }
-    event.currentTarget.classlist.add("active-link");
-    document.getElementById(tabname).classlist.add("active-tab")
+function opentab(tabname){
+    document.getElementsByClassName("active-link")[0]?.classList.remove("active-link");
+    document.getElementById(tabname).classList.add("active-link");
+    var toActive = document.getElementById(tabname).getAttribute("data-expand");
+    document.getElementsByClassName("active-tab")[0]?.classList.remove("active-tab");
+    document.getElementById(toActive).classList.add("active-tab");
  }
